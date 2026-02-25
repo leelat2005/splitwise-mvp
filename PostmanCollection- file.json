@@ -1,0 +1,117 @@
+{
+    "info": {
+        "name": "Splitwise MVP API Collection",
+        "_postman_id": "12345678-1234-1234-1234-123456789012",
+        "description": "Postman collection for Splitwise MVP Backend (Node.js + Express + Sequelize)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"email\": \"user1@example.com\",\n  \"password\": \"123456\",\n  \"currency\": \"INR\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/api/users",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "users"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Users",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{base_url}}/api/users",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "users"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Add Expense",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Dinner\",\n  \"amount\": 2000,\n  \"currency\": \"INR\",\n  \"paidBy\": 1,\n  \"members\": [\n    1,\n    2\n  ],\n  \"date\": \"2026-02-25\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/api/expenses",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "expenses"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get All Expenses",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{base_url}}/api/expenses",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "expenses"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Balances",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{base_url}}/api/balances/1",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "balances",
+                        "1"
+                    ]
+                }
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:5000"
+        }
+    ]
+}
